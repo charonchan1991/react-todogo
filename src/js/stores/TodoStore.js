@@ -17,7 +17,7 @@ class TodoStore extends EventEmitter{
       const vals = snapshot.val();
       if (vals != null){
         const arr = Object.keys(vals).map(id => vals[id]);
-        this.todos = arr.sort(dynamicSort("text")).sort(dynamicSort("complete"));
+        this.todos = arr.sort(dynamicSort("complete"));
         this.requesting = false;
         this.emit("change");
       }
@@ -48,7 +48,7 @@ class TodoStore extends EventEmitter{
       text: text,
       complete: false
     };
-    this.todos.push(newTodo);
+    this.todos.unshift(newTodo);
     this.emit("change");
     this.emit("added");
     this.writeRemoteData(newTodo);

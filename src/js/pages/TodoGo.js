@@ -18,7 +18,7 @@ export default class FluxDemo extends React.Component {
     TodoStore.on("confirm_delete", this.showModal);
     TodoStore.on("added", () => {
       $('#todo-list-group').stop().animate({
-        scrollTop: $('#todo-list-group')[0].scrollHeight
+        scrollTop: 0
       }, 500);
     });
   }
