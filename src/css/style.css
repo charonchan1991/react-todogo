@@ -1,0 +1,112 @@
+#todo-list-group {
+  height: 287px;
+  overflow-y: auto;
+}
+li.todo-list:first-child {
+  border-top: none;
+}
+li.todo-list {
+  border-top: 1px solid #374b5f;
+  font-size: 13px;
+  padding: 5px;
+}
+li.todo-list input{
+  min-width: 392px;
+}
+li.todo-list .todo-text-container{
+  display: inline-block;
+  padding: 0 10px 4px 10px; 
+  max-width: 450px;
+  min-height: 23px;
+  vertical-align: middle;
+}
+li.todo-list .todo-text{
+  vertical-align: middle;
+  margin-right: 5px;
+}
+li.todo-list .form-group{
+  display: inline-block
+}
+button.todo-ctrls {
+  min-width: 33px;
+}
+/*button.btn.btn-default.btn-xs{
+  max-height: 18px;
+  padding: 0 4px;
+}*/
+@media all and (max-width:1200px) {
+  li.todo-list input{min-width: 292px;}
+  li.todo-list .todo-text-container{max-width:350px;}
+}
+@media all and (max-width:992px) {
+  li.todo-list input{min-width: 557px;}
+  li.todo-list .todo-text-container{max-width:625px;}
+}
+@media all and (max-width:767px) {
+  .display-sm-block { width: 100%; display:block; }
+  /* li.todo-list .todo-text-container{
+    padding:0;
+    max-width:none;
+  } */
+  li.todo-list input{min-width: 0;}
+}
+
+/* Loader */
+#loader {
+    position: absolute;
+    left: 50%;
+    z-index: 1;
+    border: 5px solid #374b5f;
+    border-top: 5px solid #df691a;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin: 50px 0 0 -15px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  margin-top: 20px;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s;
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 }
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom {
+  from{ bottom:-100px; opacity:0 }
+  to{ bottom:0; opacity:1 }
+}
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    /*-webkit-border-radius: 10px;
+    border-radius: 10px;*/
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    background: #b15315; 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
